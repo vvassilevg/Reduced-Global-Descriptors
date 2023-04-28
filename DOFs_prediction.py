@@ -75,26 +75,6 @@ def set_alphas(R_d_desc, alphas): #, tril_perms_lin):  # TODO: document me, this
 
 
 def _predict_wkr(wkr_start_stop, chunk_size, r_desc, sig, n_perms, R_desc_perms, R_desc_perms_shape, R_d_desc_alpha_perms, R_d_desc_alpha_perms_shape):
-    """
-    Compute part of a prediction.
-
-    The workload will be processed in `b_size` chunks.
-
-    Parameters
-    ----------
-            wkr_start_stop : tuple of int
-                    Indices of first and last (exclusive) sum element.
-            r_desc : :obj:`numpy.ndarray`
-                    1D array containing the descriptor for the query
-                    geometry.
-
-    Returns
-    -------
-            :obj:`numpy.ndarray`
-                    Partial prediction of all force components and
-                    energy (appended to array as last element).
-    """
-
 
     wkr_start, wkr_stop = wkr_start_stop
 
@@ -199,20 +179,11 @@ n_perms = Model['perms'].shape[0]
 
 lat_and_inv = None
 
-"""
-##Use this only for my version of sGDML
-if 'b_arr' not in Model.files:
-    b_arr, a_arr, d_arr = np.array(None), np.array(None), np.array(None)
-else:
-    b_arr, a_arr, d_arr = Model['b_arr'], Model['a_arr'], Model['d_arr']
-
 if 'desc_type' not in Model.files:
    desc_type = 1
 else:
    desc_type = Model['desc_type']
 
-## --------------------------------------
-"""
 
 std = Model['std'] if 'std' in Model.files else 1.0
 n_train = Model['idxs_train'].shape[0]
