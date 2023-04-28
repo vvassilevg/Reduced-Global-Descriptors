@@ -5,7 +5,7 @@ Python scripts to define the most relevant features of a ML descriptor as descri
 
 2. DOFs_errors.py : Script that reads the output(s) of DOFs_prediction.py, either a single NPZ file or a directory containing more than one NPZ files. Outputs NPZ files containing the indexes of the features to remove for each selected percentile (i.e., one file per selected percentile). These NPZ files are the ones that can be fed to GDML.
 
-3. sgdml_routines : Directory containing the modified (s)GDML (http://sgdml.org) routines. Install the (s)GDML package by cloning the git repository (follow the instructions in https://github.com/stefanch/sGDML) and replace the original files with the files in this directory. if you want to use the reduced descriptor to train a model, here is an example:
+3. sgdml_routines : Directory containing the modified (s)GDML (http://sgdml.org) routines. Install the (s)GDML package by cloning the git repository (follow the instructions in https://github.com/stefanch/sGDML) and replace the corresponding original files with the files in this directory (not all sGDML scripts need to be replaced, only those that are in this sgdml_routines directory. All other files should remain the same. For instance, do not replace all utils directory with the one here. Only replace the sgdml/utils/desc.py file with the sgdml_routines/utils/desc.py). if you want to use the reduced descriptor to train a model, here is an example:
 
 ``sgdml all --gdml --desc_type 2 --DOFs_file rm_idxs.npz dataset.npz n_train n_valid n_test``
 
