@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/633915330.svg)](https://zenodo.org/badge/latestdoi/633915330)
 
-Python scripts to define the most relevant features of a ML descriptor as described in Kabylda, A., Vassilev-Galindo, V., Chmiela S., Poltavski, I., Tkatchenko, A.; arXiv preprint arXiv:2209.03985 (accepted in Nature Communications). We refer all users to the original publication for an extensive description of the approach and a wide range of analysis of its results on some tests systems taken from the MD22 Dataset (http://sgdml.org/#datasets).
+Python scripts to define the most relevant features of a ML descriptor as described in Kabylda, A., Vassilev-Galindo, V., Chmiela S., Poltavski, I., Tkatchenko, A.; Nat. Commun. 14, 3562 (2023) [https://www.nature.com/articles/s41467-023-39214-w]. We refer all users to the original publication for an extensive description of the approach and a wide range of analysis of its results on some tests systems taken from the MD22 Dataset (http://sgdml.org/#datasets).
 
 1. DOFs_prediction.py : Script that reads an ML model (ML_{original} in the original publication) and the dataset on which the model was trained. It assumes format of ML models and datasets of (s)GDML (.npz). Outputs one or more NPZ files containing the predictions of the ML model with each feature masked one by one (i.e., there is one set of predictions for each feature in the original descriptor). Here, "masked" means that the value of the feature is set to 0 for all configurations.
 
